@@ -1,0 +1,31 @@
+:root {
+  --ink: #1c2530; --muted: #5d6b7a; --line: #d5dbe1; --bg: #eef1f4; --surface: #fff;
+  --accent: #0b5cad; --accent-ink: #fff; --danger: #b3261e; --ok: #1a7f4b;
+  font-family: "Public Sans", system-ui, sans-serif; color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+.shell { max-width: 520px; margin: 0 auto; padding: 24px 16px 64px; }
+.tabs { display: flex; gap: 4px; margin-bottom: 16px; }
+.tabs button { flex: 1; padding: 10px; border: 0; border-bottom: 2px solid transparent; background: none; font: inherit; color: var(--muted); cursor: pointer; }
+.tabs button[aria-current="true"] { color: var(--ink); border-color: var(--accent); font-weight: 700; }
+.card { display: flex; flex-direction: column; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
+h1, h2 { margin: 0; font-size: 1.4rem; }
+p { margin: 0; line-height: 1.5; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: .95rem; }
+input, textarea { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); }
+input[aria-invalid="true"] { border-color: var(--danger); }
+:focus-visible { outline: 3px solid #7fb2e8; outline-offset: 1px; }
+.row { display: flex; gap: 12px; } .row > * { flex: 1; }
+button { font: inherit; padding: 11px 16px; border-radius: 6px; cursor: pointer; }
+.primary { background: var(--accent); color: var(--accent-ink); border: 0; font-weight: 700; }
+.ghost { background: none; border: 1px solid var(--line); color: var(--ink); }
+button:disabled { opacity: .55; cursor: not-allowed; }
+.hint { font-weight: 400; font-size: .85rem; color: var(--danger); } .hint.ok { color: var(--ok); }
+.error { color: var(--danger); font-size: .95rem; }
+.greeting { padding: 10px 12px; background: #e6f2ea; color: #14532d; border-radius: 6px; font-weight: 500; }
+.code { font-size: 3rem; font-weight: 700; letter-spacing: .3em; font-variant-numeric: tabular-nums; padding: 12px 0; text-align: center; border-block: 2px solid var(--ink); }
+.code-input { font-size: 1.8rem; letter-spacing: .4em; text-align: center; font-variant-numeric: tabular-nums; }
+.backdrop { position: fixed; inset: 0; background: rgba(20, 28, 38, .55); display: grid; place-items: center; padding: 16px; }
+.modal { width: 100%; max-width: 420px; }
+@media (max-width: 420px) { .row { flex-direction: column; } .code { font-size: 2.2rem; } }
